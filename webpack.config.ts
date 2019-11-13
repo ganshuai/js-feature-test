@@ -1,7 +1,7 @@
 module.exports = {
   entry: {
     index: './src/index.ts',
-    runTeatureTest: './src/runTeatureTest.ts'
+    runFeatureTest: './src/runFeatureTest.ts'
   },
   mode: 'production', //development, production
   output: {

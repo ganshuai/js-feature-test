@@ -3,7 +3,7 @@ const path = require('path')
 
 const moduleExports = 'module.exports'
 const outputFile = path.resolve(__dirname, 'dist/featureTestHtml.js')
-let data = fs.readFileSync('./dist/runTeatureTest.js').toString()
+let data = fs.readFileSync('./dist/runFeatureTest.js').toString()
 data = fs.readFileSync('./template.html').toString().replace('{{code}}', data)
 
 let content = {
