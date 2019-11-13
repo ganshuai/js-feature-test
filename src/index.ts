@@ -2,7 +2,14 @@ import { validators as featureTestValidators } from './validators/index'
 import { Validator, checkResult, dynamicProperties, featureTestConfig } from './validators/types'
 import { setConfig } from './tools'
 
-export function featureTest(content: any, config: featureTestConfig, validators: Validator[], cb?: Function) {
+/**
+ * 运行所有validator
+ * @param { any } content 暂无， 
+ * @param { featureTestConfig } config 测试配置
+ * @param { Validator[] }validators 自定义的validators
+ * @param { Function? } cb 运行完成以后的回掉函数
+ */
+export function featureTest(content: any, config: featureTestConfig, validators: Validator[] = [], cb?: Function) {
   setConfig(config)
   validators = featureTestValidators.concat(validators || [])
   validators = uniqueValidators(validators)
