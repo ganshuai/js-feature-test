@@ -6,12 +6,16 @@
   "types": "dist/src",
   "scripts": {
     "build": "npm run webpack && node main.js",
-    "webpack": "webpack --config ./webpack.config.ts"
+    "webpack": "webpack --config ./webpack.config.ts",
+    "start": "npm run server",
+    "server": "node ./service.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/lodash-es": "^4.17.3",
+    "express": "^4.17.1",
+    "open": "^7.0.0",
     "ts-loader": "^6.2.0",
     "typescript": "^3.6.3",
     "webpack": "^4.41.0",

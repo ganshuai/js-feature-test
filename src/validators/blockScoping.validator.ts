@@ -2,11 +2,8 @@ import { runTest } from '../tools'
 import { Validator, TestType } from './types'
 
 const testExpression = `
-  if(1) {
-    const a = 1
-  }
-
-  a
+  const a = 1;
+  return a
 `
 
 const name = 'blockScoping'
@@ -16,8 +13,9 @@ export const validator: Validator = {
     return runTest({
       done, name,
       description: 'https://www.babeljs.cn/docs/plugins',
-      type: TestType.expectThrowError,
-      expression: testExpression
+      type: TestType.checkResult,
+      expression: testExpression,
+      expectResult: 1
     })
   }
 }
